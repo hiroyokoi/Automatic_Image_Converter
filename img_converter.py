@@ -13,13 +13,16 @@ def convert_image(directory):
         shutil.rmtree(directory + '_resized')
     os.makedirs(directory + '_resized')
     resized_dir = directory + '_resized'
-    for idx, filename in enumerate(os.listdir(directory)):
-        if filename == '.DS_Store':
-            continue
-        im = Image.open(os.path.join(directory, filename))
-        rgb_im = im.convert('RGB')
-        rgb_im_resize = rgb_im.resize((256, 256))
-        rgb_im.save(os.path.join(resized_dir, directory + "-" + str(idx + 1) + ".jpg"))
+    try:
+        for idx, filename in enumerate(os.listdir(directory)):
+            if filename == '.DS_Store':
+                continue
+            im = Image.open(os.path.join(directory, filename))
+            rgb_im = im.convert('RGB')
+            rgb_im_resize = rgb_im.resize((256, 256))
+            rgb_im.save(os.path.join(resized_dir, directory + "-" + str(idx + 1) + ".jpg"))
+    except:
+        pass
     print('\n\tCONGRATULATIONS! WORK COMPLETED\n')
     print('\tOut of {} files, {} ({:.2f}%) were converted.\n'.format(len(os.listdir(directory)), len(os.listdir(resized_dir)), (len(os.listdir(resized_dir)) / len(os.listdir(directory)))*100))
 
