@@ -10,5 +10,5 @@ Mount the py file into the directory you want to convert, and run the py file in
 - Open Terminal/Command
 - cd "parent path of the folder that you want to convert"
 - python ./img_converter.py "FOLDER NAME"
-
-Finish!
+    
+The script will pass broken/corrupt images and will give you the result of how many images were converted.
