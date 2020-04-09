@@ -1,6 +1,6 @@
 # Automatic_Image_Converter
 
-A script to automatically convert the images in a folder.
+A script to automatically convert the images in a folder.  
 *img_converter.py* file allows you to convert the file by resizing them to 256x256 and renaming them into "foldername-i.jpg" (i refers to the continuous number).
 
 ## How to use
